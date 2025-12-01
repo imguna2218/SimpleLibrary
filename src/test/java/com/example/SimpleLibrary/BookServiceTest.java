@@ -2,18 +2,16 @@ package com.example.SimpleLibrary;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class BookServiceTest {
-
     @Test
-    void testGetBookName() {
-        // Setup
+    void testAddAndGetBooks() {
         BookService service = new BookService();
+        int initialSize = service.getBooks().size();
 
-        // Execute
-        String result = service.getBookName();
+        service.addBook("Test Book", "Test Author");
 
-        // Assert (This ensures Module 11 passes)
-        assertEquals("DevOps Handbook", result);
+        assertEquals(initialSize + 1, service.getBooks().size());
     }
 }
