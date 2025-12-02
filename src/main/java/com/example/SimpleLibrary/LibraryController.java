@@ -19,7 +19,7 @@ public class LibraryController {
         model.addAttribute("books", bookService.getBooks());
         return "index"; // Looks for index.html
     }
-
+    // change
     @PostMapping("/add")
     public String addBook(@RequestParam String title, @RequestParam String author) {
         bookService.addBook(title, author);
